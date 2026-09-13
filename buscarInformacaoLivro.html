@@ -2,30 +2,37 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Buscar Informações do Livro</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Buscar Livro</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Lista de Informações do Livro</h1>
+  <h1>Lista de Livros</h1>
+  <button onclick="listarTodos()">Listar Livros</button>
+  <br><br>
+  <div id="resultado"></div>
 
-    <button onclick="listarTodos()">Listar Informações</button>
-
-    <br><br>
-
-    <div id="resultado"></div>
-
-    <script src="buscarInformacaoLivro.js"></script>
+  <script src="buscarInformacaoLivro.js"></script>
 </body>
 
 </html>

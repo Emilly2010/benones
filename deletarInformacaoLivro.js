@@ -1,29 +1,29 @@
-async function carregarInfomações() {
-    const response = await fetch('http://localhost:3000/informacaoLivro');
-    const informações = await response.json();
+async function carregarLivros() {
+  const response = await fetch('http://localhost:3000/informacaoLivro');
+  const livros = await response.json();
 
-    let html = '<table><tr><th>ID</th><th>Titulo</th><th>Editora</th><th>Ano Publicação</th><th>Categoria</th>';
+  let html = '<table><tr><th>ID</th><th>Título</th><th>Editora</th><th>Ano Publicação</th><th>Categoria</th><th>Ação</th></tr>';
 
-    informações.forEach(informação => {
-        html += `<tr id="venda-${venda.id}">
-        <td>${informação.id}</td>
-        <td>${informação.titulo}</td>
-        <td>${informação.editora}</td>
-        <td>${informação.ano_publicacao}</td>
-        <td>${informação.categoria}</td>
-        <td><button class="btn-deletar" onclick="deletarInformação(${informação.id})">🗑️</button></td>
-        </tr>`;
-    });
+  livros.forEach(livro => {
+    html += `<tr id="livro-${livro.id_livro}">
+      <td>${livro.id_livro}</td>
+      <td>${livro.titulo}</td>
+      <td>${livro.editora}</td>
+      <td>${livro.ano_publicado}</td>
+      <td>${livro.categoria}</td>
+      <td><button class="btn-deletar" onclick="deletarLivro(${livro.id_livro})">🗑️</button></td>
+    </tr>`;
+  });
 
-    html += '</table>';
-    document.getElementById('tabelaInformações').innerHTML = html;
+  html += '</table>';
+  document.getElementById('tabelaLivros').innerHTML = html;
 }
 
-async function deletarInformação(id) {
-    if (!confirm(`Excluir informações ID ${id}?`)) return;
+async function deletarLivro(id_livro) {
+  if (!confirm(`Excluir livro ID ${id_livro}?`)) return;
 
-    await fetch(`http://localhost:3000/informacaoLivro/${id}`, { method: 'DELETE' });
-    document.getElementById(`informação-${id}`).remove();
+  await fetch(`http://localhost:3000/informacaoLivro/${id_livro}`, { method: 'DELETE' });
+  document.getElementById(`livro-${id_livro}`).remove();
 }
 
-window.onload = carregarInformações();
+window.onload = carregarLivros;

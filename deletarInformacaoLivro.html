@@ -2,45 +2,52 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Excluir Informações do Livro</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <title>Excluir Livro</title>
 
-        table {
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
 
-        th,
-        td {
-            border: 1px solid black;
-            padding: 10px;
-        }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        .btn-deletar {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
+    th,
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .btn-deletar {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>🗑️ Excluir Informações do Livro</h1>
-    <div id="message"></div>
-    <div id="tabelaInformação">Carregando informações...</div>
 
-    <script src="deletarInformacaoLivro.js"></script>
+  <h1>Excluir Livro</h1>
+
+  <div id="message"></div>
+
+  <div id="tabelaLivros">
+    Carregando livros...
+  </div>
+
+  <script src="deletarInformacaoLivro.js"></script>
+
 </body>
 
 </html>
